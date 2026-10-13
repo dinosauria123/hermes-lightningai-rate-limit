@@ -1,0 +1,19 @@
+name: lightningai-rate-limit
+kind: standalone
+version: 1.0.0
+description: >-
+  Per-process throttle for Lightning AI (https://lightning.ai/api/v1) so that LLM requests
+  stay within the ~15 requests/min rate limit. Gates any LLM execution whose provider or base_url
+  points at Lightning AI using a token bucket; does nothing for other providers.
+maintainer: dino
+tier: community
+category: models
+requires_hermes: ">=0.21.5"
+provides_middleware:
+- llm_execution
+capabilities:
+  provides_tools: []
+  provides_hooks: []
+  provides_middleware:
+  - llm_execution
+  requires_env: []
